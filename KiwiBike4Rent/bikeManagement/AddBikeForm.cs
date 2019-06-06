@@ -44,7 +44,7 @@ namespace KiwiBike4Rent.bikeManagement
             string modelText = listModels.GetItemText(listModels.SelectedItem);
             if (string.IsNullOrEmpty(modelText))
             {
-                MessageBox.Show("Bike Modle can not be empty!", "Warning", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Bike model can not be empty!", "Warning", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 listModels.Focus();
                 return;
             }
