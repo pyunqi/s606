@@ -155,7 +155,6 @@ namespace KiwiBike4Rent.bikeManagement
                 kiwi.SaveChanges();
             }
             MessageBox.Show("Bike Updated!", "Bike", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            btnRefresh.PerformClick();
             this.Close();
         }
 
