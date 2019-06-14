@@ -55,6 +55,13 @@ namespace KiwiBike4Rent.userManagement
                 {
                     if (!string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(lboxRole.Text))
                     {
+                        //check role;
+                        if (!Constants.roles.Contains(lboxRole.Text.ToLower()))
+                        {
+                            MessageBox.Show("Wrong Role Type!", "Inputs Wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            lboxRole.Focus();
+                            return;
+                        }
                         query.Append(" WHERE Name = @name and Role = @role");
                         SqlCommand sqlCommand = new SqlCommand(query.ToString(), connection);
                         sqlCommand.Parameters.AddWithValue("@name", txtName.Text);
@@ -72,6 +79,13 @@ namespace KiwiBike4Rent.userManagement
                     }
                     else if (!string.IsNullOrEmpty(lboxRole.Text))
                     {
+                        //check role;
+                        if (!Constants.roles.Contains(lboxRole.Text.ToLower()))
+                        {
+                            MessageBox.Show("Wrong Role Type!", "Inputs Wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            lboxRole.Focus();
+                            return;
+                        }
                         query.Append(" WHERE Role = @role");
                         SqlCommand sqlCommand = new SqlCommand(query.ToString(), connection);
                         sqlCommand.Parameters.AddWithValue("@role", lboxRole.Text);

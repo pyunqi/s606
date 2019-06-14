@@ -63,7 +63,7 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // userManageForm
+            // UserManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,8 +71,8 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnManage);
             this.Controls.Add(this.btnAdd);
-            this.Name = "userManageForm";
-            this.Text = "userManageForm";
+            this.Name = "UserManageForm";
+            this.Text = "User Management";
             this.ResumeLayout(false);
 
         }

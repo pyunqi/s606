@@ -180,6 +180,10 @@ namespace KiwiBike4Rent.bikeManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if(dgvManageBikes.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Please Select at least one row for deleteing action!!","Delete Action", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             foreach (DataGridViewRow row in dgvManageBikes.SelectedRows)
             {
                 StringBuilder bikeTempInfo = new StringBuilder();

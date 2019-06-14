@@ -19,12 +19,56 @@ namespace KiwiBike4Rent.userManagement
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                MessageBox.Show("Please enter Staff's Name!", "Input Check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtName.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtUsername.Text))
+            {
+                MessageBox.Show("Please enter Staff's Username!", "Input Check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUsername.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtTel.Text))
+            {
+                MessageBox.Show("Please enter Staff's Tel!", "Input Check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTel.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtExtNumber.Text))
+            {
+                MessageBox.Show("Please enter Staff's ExtNumber!", "Input Check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtExtNumber.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                MessageBox.Show("Please enter Staff's Password!", "Input Check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtAddress.Text))
+            {
+                MessageBox.Show("Please enter Staff's Address!", "Input Check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtAddress.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtOfficeAddress.Text))
+            {
+                MessageBox.Show("Please enter Staff's OfficeAddress!", "Input Check", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtOfficeAddress.Focus();
+                return;
+            }
+
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.KiwiBike4Rent))
             {
                 connection.Open();
                 string query = "INSERT INTO STAFF VALUES" +
-                    " (@Name,@UserName,@tel,@extNumber, @password, @address," +
-                    " @officeAddress,'staff', 'check-out')";
+                    " (@Name,@UserName, @password, @address,@tel, @officeAddress,@extNumber" +
+                    ",'staff', 'check-out')";
                 SqlCommand sqlCommand = new SqlCommand(query, connection);
                 sqlCommand.Parameters.AddWithValue("@name", txtName.Text);
                 sqlCommand.Parameters.AddWithValue("@UserName", txtUsername.Text);
