@@ -49,9 +49,9 @@
             // 
             this.btnProfile.Location = new System.Drawing.Point(374, 23);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(101, 46);
+            this.btnProfile.Size = new System.Drawing.Size(101, 35);
             this.btnProfile.TabIndex = 5;
-            this.btnProfile.Text = "Edit Your Profile";
+            this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 

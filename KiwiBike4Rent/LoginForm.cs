@@ -83,7 +83,7 @@ namespace KiwiBike4Rent
                                       select staff;
                   
                         LoginInfo.currentUser = role.FirstOrDefault<STAFF>(); //current user is saved in global scope
-                        Dashboard dashboard = new Dashboard(); // pass permission to next form
+                        Dashboard dashboard = new Dashboard(); 
                         dashboard.Show();
                     }
                     else
